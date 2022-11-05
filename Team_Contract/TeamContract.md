@@ -16,4 +16,4 @@ Everyone will contribute to the development of the code in some form according t
 6. **Conflict Resolution** 
 To dissolve disagreements we will talk as a team and might resort to voting. If a team member has not accomplished their task we will try to help them, and if the problem persists we will talk to a mentor. If one or more members is habitually late by accident we will adjust meeting times. If one team member is struggling we will try to explain relevant ideas to them and if it fails, we will have another team member work more closely with them.
 ## Signatures
-Vishesh Prasad, Arnav Mehta, Anirudh Laxminarasimha Bachiraju, Rohit Uruma
+Vishesh Prasad (vprasad3), Arnav Mehta(arnavm7), Anirudh Laxminarasimha Bachiraju (alb11), Rohit Uruma (ruruma2)
