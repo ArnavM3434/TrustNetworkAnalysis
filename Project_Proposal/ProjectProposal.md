@@ -4,7 +4,8 @@ This is a who-trust-whom online social network of a general consumer review site
 Questions we hope to answer:
 Given this dataset of trust relationships for Epinions.com used to determine which reviews are shown to the user, how can we efficiently traverse through the network and from user to user? Which users are the most influential/important in this social network and why are they significant? 
 
-We will use Djikstra’s algorithm to find the distance between 2 nodes - if the distance is 1, one node trusts the other node to the maximum degree (so a review from one node would very likely be shown to the other). As distance increases, the trust level decreases.
+(NEW) We will use the Betweenness centrality algorithm to determine the nodes that most frequently act as bridges between other nodes. Disrupting these nodes would cripple the entire trust network.
+
 
 The PageRank algorithm will determine the most trusted nodes in a connected component, which are the nodes with the most incoming connections. The details of this will be described in detail further down.
 
@@ -29,13 +30,16 @@ We are using a std::vector of std::vectors of integers to store the data. The fi
 ## Algorithm 
 Function Inputs:
 The data structure containing all the data will be an adjacency list consisting of a vector of vectors. Each element in the outer vector represents a unique user, and the vector that it contains represents all the users that trust that corresponding user.
-To traverse through all the users in a connected component, we will use BFS and the input of that function will be the unique ID of a user in that connected component.
-To figure out the shortest distance of trust between two users, we will implement Dijkstra’s algorithm with an input of two unique user IDs.
+To traverse through all the users in a connected component, we will use BFS and the input of that function will be the unique ID of a user in that connected component..
 To get the ranking of the most “influential” users (according to PageRank centrality) in a connected component, we will implement the PageRank algorithm with an input of one user ID in that connected component.
+(NEW) To get the ranking of the most “influential” users (according to Betweenness centrality) in a connected component, we will implement the Betweenness centrality algorithm with an input of one user ID in that connected component.
 
 
 Function Outputs
-Our output for the PageRank will be a vector of the top 10 most “influential” nodes in order. For the Djikstra’s algorithm the output is a integer representing the distance between 2 nodes - this is effectively the level of trust between 2 nodes, which a greater distance indicating less trust.
+Our output for the PageRank and Betweenness centrality algorithm will be a vector of the top 10 most “influential” nodes in order. 
+
+
+(NEW) For the Djikstra’s algorithm the output is a integer representing the distance between 2 nodes - this is effectively the level of trust between 2 nodes, which a greater distance indicating less trust.
 
 
 Function Efficiency
@@ -48,7 +52,7 @@ By November 11th:
 Data Acquisition, Data Processing, Implement Breadth First Search, Data parsing pipeline
 
 By November 18th:
-Implement Dijkstra’s Algorithm
+Implement Betweenness centrality Algorithm
 
 By November 25th:
 Data correction, Implement PageRank Algorithm, Write Test Cases 
