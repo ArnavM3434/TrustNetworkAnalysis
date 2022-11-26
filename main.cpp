@@ -9,6 +9,7 @@
 
 
 #include "DataParsing.h"
+#include "AdjList.h"
 
 
 /**
@@ -18,4 +19,7 @@ int main()
 {
     std::cout << "Hello World\n";
     V2D inputNodes = getNodes();
+    std::cout << "" << std::endl;
+    AdjList a(inputNodes, 500);
+    // a.print();
 }
