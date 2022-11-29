@@ -10,6 +10,7 @@
 
 #include "DataParsing.h"
 #include "AdjList.h"
+#include "BFS.h"
 
 
 /**
@@ -22,4 +23,14 @@ int main()
     std::cout << "" << std::endl;
     AdjList a(inputNodes, 500);
     // a.print();
+
+    BFS traversal(a);
+    traversal.Traverse();
+    //print first 50 nodes in traversal
+    std::vector<int> & output = traversal.Output();
+    for(int i = 0; i < output.size(); i++){
+        std::cout << output[i] << std::endl;
+    }
+
+    return 0;
 }

@@ -21,3 +21,18 @@ void AdjList::print() {
         std::cout << "" << std::endl;
     }
 }
+
+
+
+int AdjList::getMaxNode(){
+    return maxNode_;
+
+
+}
+
+
+
+std::vector<std::vector<int>> & AdjList::getAdjList(){
+    return adjlist_;
+
+}
