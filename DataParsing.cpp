@@ -10,7 +10,7 @@ V2D file_to_V2D(const std::string & filename) {
 
     V2D toReturn;
     std::ifstream infile(filename);
-    int maxNode = 500;
+    int maxNode = 5;
 
     std::string line;
     while (std::getline(infile, line)) {

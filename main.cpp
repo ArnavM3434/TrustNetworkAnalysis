@@ -12,17 +12,28 @@
 #include "AdjList.h"
 #include "BFS.h"
 
-
+using namespace std;
 /**
  * Main routine for the Trust Network Project
  */
 int main()
 {
-    std::cout << "Hello World\n";
+    // const std::vector<std::vector<int>> & vect
+    // {
+    //     {1, 2, 3},
+    //     {4, 5, 6},
+    //     {7, 8, 9}
+    // };
+    // AdjList peep(vect, 5);
+    
+
     V2D inputNodes = getNodes();
     std::cout << "" << std::endl;
-    AdjList a(inputNodes, 500);
-    // a.print();
+    AdjList a(inputNodes, 5);
+    a.print();
+
+    int num = a.getMaxNode();
+    std::cout << "Max Node: " << num << std::endl;
 
     BFS traversal(a);
     traversal.Traverse();
@@ -31,17 +42,6 @@ int main()
     for(int i = 0; i < output.size(); i++){
         std::cout << output[i] << std::endl;
     }
-
-    std::vector<std::vector<int>> vect
-    {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-
-    AdjList *peep = new AdjList(vect, 5);
-    peep->print();
-
 
 
 
