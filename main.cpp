@@ -32,5 +32,31 @@ int main()
         std::cout << output[i] << std::endl;
     }
 
+    std::vector<std::vector<int>> vect
+    {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    AdjList *peep = new AdjList(vect, 5);
+    peep->print();
+
+
+
+
     return 0;
 }
+
+// TEST_CASE("BFS Test", "[weight=2][part=1]") 
+// {
+//     std::vector<std::vector<int>> vect
+//     {
+//         {1, 2, 3},
+//         {4, 5, 6},
+//         {7, 8, 9}
+//     };
+
+//     REQUIRE(1 == 1);
+
+// }
