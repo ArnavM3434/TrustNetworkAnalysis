@@ -69,6 +69,3 @@ std::vector<int> & BFS::Output(){
     return traversalOutput;
 
 }
-
-
-//omghi
