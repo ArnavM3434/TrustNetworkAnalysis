@@ -1,4 +1,4 @@
-//#include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -10,6 +10,8 @@
 #include "BFS.h"
 #include "DataParsing.cpp"
 #include "DataParsing.h"
+
+//using namespace std;
 
 // PNG getTestPNG() {
 //   PNG png(4, 4);
@@ -26,15 +28,16 @@
 // }
 
 
-TEST_CASE("BFS Test") 
+TEST_CASE("BFS Test", "[weight=2][part=1]") 
 {
-   vector<vector<int>> vect
+    vector<vector<int>> vect
     {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
+    REQUIRE("slay" == "slay");
 
 }
 
