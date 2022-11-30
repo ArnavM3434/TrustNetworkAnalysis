@@ -33,17 +33,18 @@ int main()
     a.print();
 
     int num = a.getMaxNode();
+    std::cout << "Expected Max Node: " << 5 << std::endl;
     std::cout << "Max Node: " << num << std::endl;
 
     BFS traversal(a);
     traversal.Traverse();
-    //print first 50 nodes in traversal
+    //print first 5 nodes in traversal
+    std::cout << "Expected Traversal Order: " << 0 << 1 << 4 << 3 << 2 << std::endl;
+
     std::vector<int> & output = traversal.Output();
     for(int i = 0; i < output.size(); i++){
         std::cout << output[i] << std::endl;
     }
-
-
 
     return 0;
 }
