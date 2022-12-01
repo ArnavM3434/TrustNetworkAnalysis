@@ -12,26 +12,17 @@ BFS::BFS(AdjList graph){
     traversalOutput = std::vector<int> (maxNode);
     traversalIndex = 0;
 
-    adjlist_ = graph.getAdjList();
-
-
-
-
+    adjlist_ = graph.getAdjListTo();
 }
 
-void BFS::Traverse(){
+void BFS::Traverse(int startNode){
 
+    Explore(startNode);
     for(unsigned i = 0; i < adjlist_.size(); i++){
         if(visitedNodes[i] == false){
             Explore(i);
-
         }
-
     }
-
-    
-
-
 }
 
 void BFS::Explore(int v){
@@ -53,19 +44,12 @@ void BFS::Explore(int v){
                 q.push(neighbor);
 
             }
-
         }
-
-
     }
-
-
-
 }
 
 
 
 std::vector<int> & BFS::Output(){
     return traversalOutput;
-
 }

@@ -10,7 +10,7 @@ class BFS{
 
     BFS(AdjList graph);
 
-    void Traverse();
+    void Traverse(int startNode);
 
     void Explore(int v);
 
