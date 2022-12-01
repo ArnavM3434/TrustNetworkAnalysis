@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 #include "AdjList.h"
 #include "BFS.h"
 
@@ -17,6 +18,11 @@ BFS::BFS(AdjList graph){
 
 void BFS::Traverse(int startNode){
 
+    /*
+    for(int i = 0; i < visitedNodes.size(); i++){
+        visitedNodes[i] = false;
+    }
+    */
     Explore(startNode);
     for(unsigned i = 0; i < adjlist_.size(); i++){
         if(visitedNodes[i] == false){
@@ -35,6 +41,18 @@ void BFS::Explore(int v){
         q.pop();
         traversalOutput[traversalIndex] = v;
         traversalIndex++;
+        // std::vector<int> tempNeigh(adjlist_[v]);
+        // int numNeigh = tempNeigh.size();
+        // while(numNeigh > 0) {
+        //     auto nextNode = *std::min_element(tempNeigh.begin(), tempNeigh.end());
+        //     if(visitedNodes[nextNode] == true) {
+        //         continue;
+        //     } else {
+        //         visitedNodes[nextNode] = true;
+        //         q.push(nextNode);
+        //     }
+        //     numNeigh--;
+        // }
         for (int neighbor : adjlist_[v]){
             if(visitedNodes[neighbor] == true){
                 continue;

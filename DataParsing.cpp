@@ -23,7 +23,7 @@ V2D file_to_V2D(const std::string & filename, int setMax) {
         std::vector<std::string> currLine;
         char toSplit = '\t';
         int numLines = SplitString(line, toSplit, currLine);
-        if(currLine.size() != 2) {
+        if(numLines != 2) {
             continue;
         }
         int nodeFrom = std::stoi(currLine[0]);

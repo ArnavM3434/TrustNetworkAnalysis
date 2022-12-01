@@ -26,16 +26,19 @@ int main()
          std::cout<<std::to_string(cleanedNodes[i][0]) + " " + std::to_string(cleanedNodes[i][1])<<std::endl;
     }
     AdjList dataAdjList(cleanedNodes, setMaxNodes);
-    int bfsStartNode = 5;
+    int bfsStartNode = 0;
     BFS bfsTraversal(dataAdjList);
     bfsTraversal.Traverse(bfsStartNode);
     std:vector<int>& bfsTraversalOutput = bfsTraversal.Output();
-    std::cout<<"Traversal Starting at Node " + std::to_string(bfsStartNode) + ":"<<std::endl;
-    for(int i = 0; i < 10; i++){
+    std::cout<<"Portion of Traversal Starting at Node " + std::to_string(bfsStartNode) + ":"<<std::endl;
+    for(int i = 0; i < 9; i++){
          std::cout<<bfsTraversalOutput[i]<<std::endl;
     }
     std::cout<<"Completed Part One"<<std::endl;
-
+    
+    std::cout<<"Now Running Tests!"<<std::endl;
+    
+    test(1);
 
 
     // V2D inputNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
