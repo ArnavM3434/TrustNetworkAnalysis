@@ -1,6 +1,10 @@
 #include "Test.h"
 
-
+/*
+ * test is a function that is used to test the working capacity of our functions
+ * @param testNumber is the testNumber that we want to run;
+ * @return bool which is true if test casses pass and false otherwise
+ */
 bool test(int testNumber) {
     std::vector<std::string> testHold;
     const std::string testOne = "Tests/TestOne.txt";
@@ -9,6 +13,13 @@ bool test(int testNumber) {
     return testHelper(testHold[testNumber - 1]);
 }
 
+
+/*
+ * testHelper is a helper function that takes in the file with the test data and test all functions
+ * that we have implemented
+ * @param filename The name of the file that holds the test data
+ * @return bool which is true if test casses pass and false otherwise
+ */
 bool testHelper(const std::string & filename) {
     int setMaxNodes = 5;
     V2D cleanedNodes = getNodes(filename, setMaxNodes);
@@ -16,7 +27,6 @@ bool testHelper(const std::string & filename) {
     AdjList dataAdjList(cleanedNodes, setMaxNodes);
 
     //Testing cleanNodes
-
     V2D expectedCleanNodes = {
         {0,1},
         {1,2},
@@ -24,9 +34,6 @@ bool testHelper(const std::string & filename) {
         {2,0},
         {4,3}
     };
-
-    
-
     if(expectedCleanNodes != cleanedNodes){
         std::cout<<"Data Incorrectly Cleaned"<<std::endl;
         for(int i = 0; i < expectedCleanNodes.size(); i++){
@@ -45,9 +52,7 @@ bool testHelper(const std::string & filename) {
         std::cout<<"Test Data Correctly Cleaned"<<std::endl;
     }
 
-
     //Testing Adjacency List "From"
-
     V2D expectedAdjListFrom = {
         {2},
         {0},
@@ -55,7 +60,6 @@ bool testHelper(const std::string & filename) {
         {1,4},
         {}
     };
-
     if(expectedAdjListFrom != dataAdjList.getAdjListFrom()){
         std::cout<<"Adjacency List 'From' is Incorrect"<<std::endl;
         return false;
@@ -64,7 +68,7 @@ bool testHelper(const std::string & filename) {
         std::cout<<"Adjacency List 'From' is Correct"<<std::endl;
 
     }
-
+    //Testing Adjacency List "From"
     V2D expectedAdjListTo = {
         {1},
         {2,3},
@@ -72,9 +76,7 @@ bool testHelper(const std::string & filename) {
         {},
         {3}
     };
-
     V2D actualAdjListTo = dataAdjList.getAdjListTo();
-
     if(expectedAdjListTo != actualAdjListTo){
         std::cout<<"Adjacency List 'To' is Incorrect"<<std::endl;
 
@@ -93,8 +95,6 @@ bool testHelper(const std::string & filename) {
     std::vector<int>& bfsTraversalOutput = bfsTraversal.Output();
     std::cout<<"Traversal Starting at Node " + std::to_string(bfsStartNode) + ":"<<std::endl;
 
-
-    
     std::vector<int> expectedBFS = {0,1,2,3,4};
     if(expectedBFS != bfsTraversalOutput){
         std::cout<<"BFS Traversal is Incorrect"<<std::endl;
@@ -121,13 +121,6 @@ bool testHelper(const std::string & filename) {
     }
 
 
-
-
-
-
-
-
     std::cout<<"Test One Passed"<<std::endl;
     return true;
 }
-

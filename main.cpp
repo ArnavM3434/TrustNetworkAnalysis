@@ -20,12 +20,15 @@ using namespace std;
 int main()
 {
     int setMaxNodes = 10000;
+    //Data Parsing
     V2D cleanedNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
     std::cout<<"First 10 lines of cleaned data set:"<<std::endl;
     for(int i = 0; i < 10; i++){
          std::cout<<std::to_string(cleanedNodes[i][0]) + " " + std::to_string(cleanedNodes[i][1])<<std::endl;
     }
+    //Get Adjacency List
     AdjList dataAdjList(cleanedNodes, setMaxNodes);
+    //Run BFS
     int bfsStartNode = 0;
     BFS bfsTraversal(dataAdjList);
     bfsTraversal.Traverse(bfsStartNode);
@@ -36,42 +39,9 @@ int main()
     }
     std::cout<<"Completed Part One"<<std::endl;
     
+    //Test Cases
     std::cout<<"Now Running Tests!"<<std::endl;
-    
     test(1);
 
-
-    // V2D inputNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
-    // std::cout << "" << std::endl;
-    // AdjList a(inputNodes, 5);
-    // a.print();
-
-    // int num = a.getMaxNode();
-    // std::cout << "Expected Max Node: " << 5 << std::endl;
-    // std::cout << "Max Node: " << num << std::endl;
-
-    // BFS traversal(a);
-    // traversal.Traverse();
-    // //print first 5 nodes in traversal
-    // std::cout << "Expected Traversal Order: " << 0 << 1 << 4 << 3 << 2 << std::endl;
-
-    // std::vector<int> & output = traversal.Output();
-    // for(int i = 0; i < output.size(); i++){
-    //     std::cout << output[i] << std::endl;
-    // }
-
-    // return 0;
+    return 0;
 }
-
-// TEST_CASE("BFS Test", "[weight=2][part=1]") 
-// {
-//     std::vector<std::vector<int>> vect
-//     {
-//         {1, 2, 3},
-//         {4, 5, 6},
-//         {7, 8, 9}
-//     };
-
-//     REQUIRE(1 == 1);
-
-// }
