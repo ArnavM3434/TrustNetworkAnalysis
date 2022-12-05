@@ -12,6 +12,7 @@
 #include "AdjList.h"
 #include "BFS.h"
 #include "Test.h"
+#include "PageRank.h"
 
 using namespace std;
 /**
@@ -19,7 +20,7 @@ using namespace std;
  */
 int main()
 {
-    int setMaxNodes = 10000;
+    int setMaxNodes = 10;
     //Data Parsing
     V2D cleanedNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
     std::cout<<"First 10 lines of cleaned data set:"<<std::endl;
@@ -38,6 +39,7 @@ int main()
          std::cout<<bfsTraversalOutput[i]<<std::endl;
     }
     std::cout<<"Completed Part One"<<std::endl;
+	//PageRank currPageRank(dataAdjList);
     
     //Test Cases
     std::cout<<"Now Running Tests!"<<std::endl;

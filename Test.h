@@ -8,6 +8,7 @@
 #include "AdjList.h"
 #include "BFS.h"
 #include "Test.h"
+#include "PageRank.h"
 
 /*
  * test is a function that is used to test the working capacity of our functions
