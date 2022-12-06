@@ -9,23 +9,23 @@
 class PageRank {
 	public:
 		/*
-         * PageRank is a cuntructor that convert the given graph's adjacency list into an 
+		 * PageRank is a cuntructor that convert the given graph's adjacency list into an 
 		 * adjacency matrix, creates and initializes the markov matrix, and creates the 
 		 * initial rank of the graph
-         * @param graph The graph dataset we are running Page Rank on
-         */
+		 * @param graph The graph dataset we are running Page Rank on
+		 */
 		PageRank(AdjList graph);
 
 		/*
-         * runPageRank is a public function that is called then the user wants to run the page
+		 * runPageRank is a public function that is called then the user wants to run the page
 		 * rank algorithm on the graph for which the page rank object was created for
-         * @param numPower The number of power iterations we want to run on the graph
+		 * @param numPower The number of power iterations we want to run on the graph
 		 * @param reset A boolean that determines if we want to run the power iterations from 
 		 * the inital rank or from the previous page rank that was calculated the last time the
 		 * page rank algorithm was run on the graph
 		 * @return a two dimentional vector of strings that holds the node and its corresponding rank
 		 * in each vector
-         */
+		 */
 		std::vector<std::vector<std::string>> runPageRank(int numPower, bool reset);
 
 		/*

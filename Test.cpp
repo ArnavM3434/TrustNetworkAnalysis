@@ -122,6 +122,13 @@ bool testHelper(const std::string & filename) {
 
 	//Test PageRank Algorithm
 	// PageRank currPageRank(dataAdjList);
+	// currPageRank.runPageRank(1, true);
+	// std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
+	// std::cout<<"\n";
+	// std::cout<<"Page Rank Results:"<<std::endl;
+	// for(auto iter : dataPageRank) {
+	// 	std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
+	// }
 
     std::cout<<"Test One Passed"<<std::endl;
     return true;
