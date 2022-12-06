@@ -13,8 +13,9 @@ class PageRank {
 		 * adjacency matrix, creates and initializes the markov matrix, and creates the 
 		 * initial rank of the graph
 		 * @param graph The graph dataset we are running Page Rank on
+		 * @param dampingFactor The damping factor used to calculate page rank
 		 */
-		PageRank(AdjList graph);
+		PageRank(AdjList graph, double dampingFactor);
 
 		/*
 		 * runPageRank is a public function that is called then the user wants to run the page

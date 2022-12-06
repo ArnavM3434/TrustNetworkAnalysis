@@ -6,9 +6,10 @@
  * adjacency matrix, creates and initializes the markov matrix, and creates the 
  * initial rank of the graph
  * @param graph The graph dataset we are running Page Rank on
+ * @param dampingFactor The damping factor used to calculate page rank
  */
-PageRank::PageRank(AdjList graph) {
-	dampingFactor_ = 0.85;
+PageRank::PageRank(AdjList graph, double dampingFactor) {
+	dampingFactor_ = dampingFactor;
 	V2D currAdjList = graph.getAdjListFrom();
 	int numMaxNodes = graph.getMaxNode();
 	V2D tempAdjMat;

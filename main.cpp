@@ -45,7 +45,8 @@ int main()
     }
 
 	//Run Page Rank
-	PageRank currPageRank(dataAdjList);
+	double dampingFactor = 0.85;
+	PageRank currPageRank(dataAdjList, dampingFactor);
 	currPageRank.runPageRank(10, true);
 	std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
 	std::cout<<"\n";
