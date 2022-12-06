@@ -119,7 +119,9 @@ bool testHelper(const std::string & filename) {
     else{
         std::cout<<"Second BFS Traversal is Correct"<<std::endl;
     }
-	//PageRank currPageRank(dataAdjList);
+
+	//Test PageRank Algorithm
+	// PageRank currPageRank(dataAdjList);
 
     std::cout<<"Test One Passed"<<std::endl;
     return true;
