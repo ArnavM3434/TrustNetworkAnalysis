@@ -28,15 +28,20 @@ class BFS{
      */
     void Explore(int v);
 
+    
+
+    /*
+    * Traversal path from specified starting node to ending node taken by BFS
+    * @param v is starting node
+    * @param e is ending node
+    * @return void
+    */
+     void Explore(int v, int e);
+
     /*
      * Output returns the traversal path taken by BFS
      * @return std::vector<int> returns the vector that holds the path taken by the traversal
      */
-
-
-     void Explore(int v, int e);
-
-
 
     std::vector<int> & Output();
 
