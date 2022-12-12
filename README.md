@@ -24,7 +24,10 @@ Step4: The executable file created can then be run with the following command:
 ```
 ./trustNet.exe 
 ```
+Step5: The output will be displayed in the terminal. Where we show BFS, PageRank, and Betweenness Centrality and their respective outputs. We also show the results of the test cases not the test cases themselves.
 - - - -
 # Data Parsing
-## Files: DataParsing.h
-Goal: to read in data and clean it up so it is usable.
+## Folder: Dataset
+Holds the data set .txt file where the data set is located.
+## Files: DataParsing.h/cpp
+Read in the data from the soc-Epinions1.txt text file located in the Dataset folder. Data stores in the given format: NodeTo"\t"NodeFrom. Store the data set in a 2 dimensional vector of integers so that it can be used to create the adjacency list.
