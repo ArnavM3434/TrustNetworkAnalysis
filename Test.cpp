@@ -94,7 +94,7 @@ bool testHelper(const std::string & filename) {
     BFS bfsTraversal(dataAdjList);
     bfsTraversal.Traverse(bfsStartNode);
     std::vector<int>& bfsTraversalOutput = bfsTraversal.Output();
-    std::cout<<"Traversal Starting at Node " + std::to_string(bfsStartNode) + ":"<<std::endl;
+    std::cout<<"Traversal Starting at Node " + std::to_string(bfsStartNode) + ": ";
 
     std::vector<int> expectedBFS = {0,1,2,3,4};
     if(expectedBFS != bfsTraversalOutput){
@@ -110,7 +110,7 @@ bool testHelper(const std::string & filename) {
     BFS bfsTraversal2(dataAdjList);
     bfsTraversal2.Traverse(bfsStartNode);
     bfsTraversalOutput = bfsTraversal2.Output();
-    std::cout<<"Traversal Starting at Node " + std::to_string(bfsStartNode) + ":"<<std::endl;
+    std::cout<<"Traversal Starting at Node " + std::to_string(bfsStartNode) + ": ";
 
     expectedBFS = {2,0,1,3,4};
     if(expectedBFS != bfsTraversalOutput){
@@ -124,13 +124,24 @@ bool testHelper(const std::string & filename) {
 	//Test PageRank Algorithm
     
 	PageRank currPageRank(dataAdjList, 0.85);
-	 currPageRank.runPageRank(1, true);
-	 std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
-	 std::cout<<"\n";
-	 std::cout<<"Page Rank Results:"<<std::endl;
-	 for(auto iter : dataPageRank) {
-	 	std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
-	 }
+	currPageRank.runPageRank(10, true);
+	std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
+	int maxRankNode = 3;
+	std::vector<double> calcRank = currPageRank.getRank();
+	double maxRank = calcRank[0];
+	int currMax = 0;
+	for(int i = 0; i < static_cast<int>(calcRank.size()); i++) {
+		if(calcRank[i] > maxRank) {
+			maxRank = calcRank[0];
+			currMax = i;
+		}
+	}
+	if(maxRankNode != currMax) {
+        std::cout<<"Page Rank Failed!"<<std::endl;
+    }
+    else{
+        std::cout<<"Page Rank Passed!"<<std::endl;
+    }
 
     
     
@@ -142,12 +153,9 @@ bool testHelper(const std::string & filename) {
     std::vector<int>& shortestOutput = shortestTraversal.returnPred(3, 0);
     if(shortestOutput[0] != 1 || shortestOutput[1] != 0){
         std::cout<<"Shortest Path Failed!"<<std::endl;
-        
     }
     else{
         std::cout<<"Shortest Path Passed!"<<std::endl;
-
-
     }
     
     
@@ -161,18 +169,13 @@ bool testHelper(const std::string & filename) {
 
     if(mostImportant != 1){
         std::cout<<"Betweenness Centrality Failed!"<<std::endl;
-        
     }
     else{
         std::cout<<"Betweenness Centrality Passed!"<<std::endl;
-
-
     }
 
 
-    
-
-    std::cout<<"All Test Passed!"<<std::endl;
+    std::cout<<"All Tests Completed!"<<std::endl;
 
     return true;
 

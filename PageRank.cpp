@@ -111,6 +111,14 @@ std::vector<std::vector<double>> PageRank::getMarkovMatrix() {
 	return markovMatrix_;
 }
 
+/*
+ * getRank returns the current page rank of the graph that has already been calculated
+ * @return a one dimensional vector of doubles
+ */
+std::vector<double> PageRank::getRank() {
+	return currPageRank_;
+}
+
 
 /*
  * powerIteration is a helper function that is used to computer one power iteration 
