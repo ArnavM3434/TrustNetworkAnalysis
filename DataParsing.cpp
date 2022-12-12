@@ -1,6 +1,6 @@
 #include "DataParsing.h"
 
-/*
+/**
  * file_to_V2D is a helper function for data parsing. It cleans up the inputed data from the 
  * given text file and returns all the nodes that are within the max node set in a V2D.
  * @param filename The name of the file that holds the data
@@ -41,7 +41,7 @@ V2D file_to_V2D(const std::string & filename, int setMax) {
     return toReturn;
 }
 
-/*
+/**
  * getNodes is a function called by main. Its purpose is to call the data parsing helper function
  * file_to_V2D and returns its output.
  * @param filename The name of the file that holds the data
@@ -50,6 +50,7 @@ V2D file_to_V2D(const std::string & filename, int setMax) {
  */
 V2D getNodes(const std::string & filename, int setMax) {
     V2D nodes = file_to_V2D(filename, setMax);
+	std::cout<<"Number of Nodes: " + std::to_string(setMax) + "\t";
     std::cout<<"Number of Edges: ";
     std::cout<<nodes.size()<<std::endl;
     return nodes;

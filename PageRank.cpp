@@ -1,7 +1,7 @@
 #include "PageRank.h"
 
 
-/*
+/**
  * PageRank is a cuntructor that convert the given graph's adjacency list into an 
  * adjacency matrix, creates and initializes the markov matrix, and creates the 
  * initial rank of the graph
@@ -67,7 +67,7 @@ PageRank::PageRank(AdjList graph, double dampingFactor) {
 }
 
 
-/*
+/**
  * runPageRank is a public function that is called then the user wants to run the page
  * rank algorithm on the graph for which the page rank object was created for
  * @param numPower The number of power iterations we want to run on the graph
@@ -93,7 +93,7 @@ std::vector<std::vector<std::string>> PageRank::runPageRank(int numPower, bool r
 }
 
 
-/*
+/**
  * getPageRank returns the current page rank of the graph that has already been calculated
  * @return a two dimensional vector of strings of the current page rank
  */
@@ -102,7 +102,7 @@ std::vector<std::vector<std::string>> PageRank::getPageRank() {
 }
 
 
-/*
+/**
  * getMarkovMatrix returns the Markov Matrix that was caluclated for the graph for which
  * the current page rank object was created for
  * @return a two dimensional vector of doubles of the Markov Matrix
@@ -111,7 +111,7 @@ std::vector<std::vector<double>> PageRank::getMarkovMatrix() {
 	return markovMatrix_;
 }
 
-/*
+/**
  * getRank returns the current page rank of the graph that has already been calculated
  * @return a one dimensional vector of doubles
  */
@@ -120,7 +120,7 @@ std::vector<double> PageRank::getRank() {
 }
 
 
-/*
+/**
  * powerIteration is a helper function that is used to computer one power iteration 
  * on the current page rank
  * @return void
@@ -142,7 +142,7 @@ void PageRank::powerIteration() {
 }
 
 
-/*
+/**
  * setPageRank is a helper function that is used to convert the internal page rank
  * vector into a 2 dimensional vector of strings to that the results of the page rank 
  * can be exported and displayed easily

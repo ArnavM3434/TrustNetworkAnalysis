@@ -7,7 +7,7 @@
 
 using std::queue;
 
-/*
+/**
  * BFS constructor that will build an object on which we can run the traversal on
  * @param graph is the adjacency list that will be running BFS traversal on
  */
@@ -21,7 +21,7 @@ BFS::BFS(AdjList graph){
     adjlist_ = graph.getAdjListTo();
 }
 
-/*
+/**
  * Traverse is the function which runs BFS on the given BFS object
  * @param startNode is the starting node for BFS traversal
  * @return void
@@ -41,7 +41,7 @@ void BFS::Traverse(int startNode){
     }
 }
 
-/*
+/**
  * Explore is a helper function for Traverse that is used to explore the neighbors of
  * the given vertex
  * @param v is the current vertex of the graph to explore by looking at its neighbors
@@ -71,7 +71,7 @@ void BFS::Explore(int v){
     }
 }
 
-/*
+/**
  * Explore is a helper function for Traverse that is used to explore the path between a start node and end ndoe
  * @param v is the starting vertex of the graph to explore by looking at its neighbors
  * @param e is the ending vertex of the graph to explore
@@ -114,10 +114,7 @@ void BFS::Explore(int v, int e){
 }
 
 
-
-
-
-/*
+/**
  * Output returns the traversal path taken by BFS
  * @return std::vector<int> returns the vector that holds the path taken by the traversal
  */
@@ -125,16 +122,13 @@ std::vector<int> & BFS::Output(){
     return traversalOutput;
 }
 
-/*
+/**
  * Output returns the shortest path between two nodes
  * @return std::vector<int> returns the vector that holds the path taken by the traversal
  * @param v is the starting vertex
  * @param e is the ending vertex
  */
 std::vector<int> & BFS::returnPred(int end, int start){
-
-    
-
     unsigned count = 0;
 
     if(pred[end] == -1){
@@ -149,12 +143,5 @@ std::vector<int> & BFS::returnPred(int end, int start){
         count++;
     }
 
-    
-
-
-
     return path;
-
-
-    
 }

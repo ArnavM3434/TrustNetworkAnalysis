@@ -10,11 +10,12 @@
 using std::queue;
 
 /*
-* This constructor handles the Betweenness Centrality Algorithm. It relies
-* on a BFS traversal to find the shortest path. It updates the class level
-* variable "MostImportant" with the node that has the most paths running through
-* it.
-*/
+ * This constructor handles the Betweenness Centrality Algorithm. It relies
+ * on a BFS traversal to find the shortest path. It updates the class level
+ * variable "MostImportant" with the node that has the most paths running through
+ * it.
+ * @param graph The graph dataset we are running Page Rank on
+ */
 BetweennessCentrality::BetweennessCentrality(AdjList graph) {
    V2D adjListTo = graph.getAdjListTo();
    std::vector<int> scores_temp(adjListTo.size());
@@ -38,8 +39,6 @@ BetweennessCentrality::BetweennessCentrality(AdjList graph) {
        }                 
    }
  
-
-    
    int max = scores[0];
    //This loop is used to find the node with the highest score
    for (unsigned i = 0; i < scores.size(); i++) {

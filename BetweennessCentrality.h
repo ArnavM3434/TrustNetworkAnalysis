@@ -9,11 +9,13 @@
 class BetweennessCentrality{
 
     public:
-    /*
-    * BetweennessCentrality constructor takes an adjacency list as an input, and runs
-    * the Betweenness Centrality Algorithm to find the node in the network
-    * which has the most nodes running through it.
-    */
+	/*
+	* This constructor handles the Betweenness Centrality Algorithm. It relies
+	* on a BFS traversal to find the shortest path. It updates the class level
+	* variable "MostImportant" with the node that has the most paths running through
+	* it.
+	* @param graph The graph dataset we are running Page Rank on
+	*/
     BetweennessCentrality(AdjList graph);
 
     /*
@@ -27,14 +29,5 @@ class BetweennessCentrality{
     std::vector<int> scores;
 
 
-
-   
-
     private:
-
-   
-
-
-
-
 };
