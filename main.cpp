@@ -20,7 +20,7 @@ using namespace std;
  */
 int main()
 {
-    int setMaxNodes = 500;
+    int setMaxNodes = 200;
 
     //Data Parsing
     V2D cleanedNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);

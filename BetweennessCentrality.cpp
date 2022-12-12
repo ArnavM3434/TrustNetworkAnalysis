@@ -9,23 +9,6 @@
 
 using std::queue;
 
-<<<<<<< HEAD
-BetweennessCentrality::BetweennessCentrality(AdjList graph){
-    V2D adjListTo = graph.getAdjListTo();
-
-    
-
-
-
-
-
-
-
-
-
-
-}
-=======
 BetweennessCentrality::BetweennessCentrality(AdjList graph) {
    V2D adjListTo = graph.getAdjListTo();
    std::vector<int> scores_temp(adjListTo.size());
@@ -57,4 +40,3 @@ BetweennessCentrality::BetweennessCentrality(AdjList graph) {
    }
   
 }
->>>>>>> newbranch
