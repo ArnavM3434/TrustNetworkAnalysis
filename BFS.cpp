@@ -150,15 +150,18 @@ std::vector<int> & BFS::returnPred(int end, int start){
     }
     */
 
+    unsigned count = 0;
+
     if(pred[end] == -1){
         return path;
     }
 
     int i = pred[end];
     path.push_back(i);
-    while(i != start && i != -1){
+    while(i != start && i != -1 && count < traversalOutput.size()){
         i = pred[i];
         path.push_back(i);
+        count++;
     }
 
     
