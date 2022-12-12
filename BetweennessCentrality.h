@@ -13,12 +13,20 @@ class BetweennessCentrality{
     
     BetweennessCentrality(AdjList graph);
 
-    void DjikstraPath();
+    int mostImportant;
+
+    std::vector<int> scores;
+
+
+
    
 
     private:
 
     std::vector<std::vector<double>> matrix;
+
+
+
 
 
 

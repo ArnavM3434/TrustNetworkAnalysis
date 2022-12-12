@@ -16,6 +16,7 @@ BFS::BFS(AdjList graph){
     visitedNodes = std::vector<bool> (maxNode, false);
     traversalOutput = std::vector<int> (maxNode);
     traversalIndex = 0;
+    pred = std::vector<int>(maxNode, -1);
 
     adjlist_ = graph.getAdjListTo();
 }
@@ -57,7 +58,7 @@ void BFS::Explore(int v){
         traversalOutput[traversalIndex] = v;
         traversalIndex++;
         // std::vector<int> tempNeigh(adjlist_[v]);
-        // int numNeigh = tempNeigh.size();
+        // int numNeigh = tempNeigh.size();        
         // while(numNeigh > 0) {
         //     auto nextNode = *std::min_element(tempNeigh.begin(), tempNeigh.end());
         //     if(visitedNodes[nextNode] == true) {
@@ -81,10 +82,94 @@ void BFS::Explore(int v){
     }
 }
 
+void BFS::Explore(int v, int e){
+    std::queue<int> q;
+    visitedNodes[v] = true;
+    q.push(v);
+
+    while(q.size() != 0){
+        v = q.front();
+        q.pop();
+        traversalOutput[traversalIndex] = v;
+        traversalIndex++;
+        // std::vector<int> tempNeigh(adjlist_[v]);
+        // int numNeigh = tempNeigh.size();
+        // while(numNeigh > 0) {
+        //     auto nextNode = *std::min_element(tempNeigh.begin(), tempNeigh.end());
+        //     if(visitedNodes[nextNode] == true) {
+        //         continue;
+        //     } else {
+        //         visitedNodes[nextNode] = true;
+        //         q.push(nextNode);
+        //     }
+        //     numNeigh--;
+        // }
+        for (int neighbor : adjlist_[v]){
+            pred[neighbor] = v;
+            if(visitedNodes[neighbor] == true){
+                continue;
+            }
+            else{
+                visitedNodes[neighbor] = true;
+
+
+
+                if(neighbor == e){
+                    //end traversal
+                    return;
+
+
+                }
+                q.push(neighbor);
+
+
+
+            }
+        }
+    }
+}
+
+
+
+
+
 /*
  * Output returns the traversal path taken by BFS
  * @return std::vector<int> returns the vector that holds the path taken by the traversal
  */
 std::vector<int> & BFS::Output(){
     return traversalOutput;
+}
+
+std::vector<int> & BFS::returnPred(int end, int start){
+
+    /*
+    std::cout<<"Start Node: " <<start<<"End Node: "<<end<<std::endl;
+    for(unsigned i = 0; i < traversalOutput.size(); i++){
+        std::cout<<traversalOutput[i]<<std::endl;
+    }
+    */
+
+    unsigned count = 0;
+
+    if(pred[end] == -1){
+        return path;
+    }
+
+    int i = pred[end];
+    path.push_back(i);
+    while(i != start && i != -1 && count < traversalOutput.size()){
+        i = pred[i];
+        path.push_back(i);
+        count++;
+    }
+
+    
+
+
+
+    return path;
+
+
+    
 }

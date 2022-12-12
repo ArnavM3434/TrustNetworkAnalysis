@@ -9,6 +9,7 @@
 #include "BFS.h"
 #include "Test.h"
 #include "PageRank.h"
+#include "BetweennessCentrality.h"
 
 /*
  * test is a function that is used to test the working capacity of our functions

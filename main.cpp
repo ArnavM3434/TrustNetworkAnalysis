@@ -20,7 +20,7 @@ using namespace std;
  */
 int main()
 {
-    int setMaxNodes = 10;
+    int setMaxNodes = 500;
 
     //Data Parsing
     V2D cleanedNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
@@ -40,11 +40,12 @@ int main()
     std:vector<int>& bfsTraversalOutput = bfsTraversal.Output();
 	std::cout<<"\n";
     std::cout<<"Portion of Traversal Starting at Node " + std::to_string(bfsStartNode) + ":"<<std::endl;
-    for(int i = 0; i < 9; i++){
+    for(int i = 0; i < 10; i++){
          std::cout<<bfsTraversalOutput[i]<<std::endl;
     }
-
+    
 	//Run Page Rank
+    /*
 	double dampingFactor = 0.85;
 	PageRank currPageRank(dataAdjList, dampingFactor);
 	currPageRank.runPageRank(10, true);
@@ -54,11 +55,25 @@ int main()
 	for(auto iter : dataPageRank) {
 		std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
 	}
+    */
+
+    
+    //run Betweenness Centrality
+    BetweennessCentrality betweenness(dataAdjList);
+    int mostImportant = betweenness.mostImportant;
+
+    std::cout<<"Most Important Node: "<<mostImportant<<std::endl;
+    
+
+
     
     //Test Cases
 	std::cout<<"\n";
     std::cout<<"Now Running Tests!"<<std::endl;
     test(1);
+
+
+    
 
     return 0;
 }
