@@ -1,5 +1,6 @@
 #include "Test.h"
 
+
 /*
  * test is a function that is used to test the working capacity of our functions
  * @param testNumber is the testNumber that we want to run;
@@ -121,15 +122,54 @@ bool testHelper(const std::string & filename) {
     }
 
 	//Test PageRank Algorithm
-	// PageRank currPageRank(dataAdjList);
-	// currPageRank.runPageRank(1, true);
-	// std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
-	// std::cout<<"\n";
-	// std::cout<<"Page Rank Results:"<<std::endl;
-	// for(auto iter : dataPageRank) {
-	// 	std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
-	// }
+    /*
+	PageRank currPageRank(dataAdjList);
+	 currPageRank.runPageRank(1, true);
+	 std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
+	 std::cout<<"\n";
+	 std::cout<<"Page Rank Results:"<<std::endl;
+	 for(auto iter : dataPageRank) {
+	 	std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
+	 }
 
+    */
     std::cout<<"Test One Passed"<<std::endl;
+
+    
+
+
+    //Testing Shortest Path With BFS
+    BFS shortestTraversal(dataAdjList);
+    shortestTraversal.Explore(0,3);
+    std::vector<int>& shortestOutput = shortestTraversal.returnPred(3, 0);
+
+    std::cout<<"Shortest Path Output:"<<std::endl;
+    for(unsigned i = 0; i < shortestOutput.size(); i++){
+        std::cout<<shortestOutput[i]<<std::endl;
+
+    }
+
+
+
+    //Betweeness Centrality Test
+    BetweennessCentrality betweenness(dataAdjList);
+    int mostImportant = betweenness.mostImportant;
+
+    std::cout<<"Most Important Node: "<<mostImportant<<std::endl;
+
+    std::cout<<"Scores Size: "<<betweenness.scores.size()<<std::endl;
+
+
+
+
+    for(unsigned i = 0; i < betweenness.scores.size(); i++){
+        std::cout << i << ": " << betweenness.scores[i]<<std::endl;
+
+    }
+
+
+    
+
     return true;
+
 }

@@ -32,7 +32,15 @@ class BFS{
      * Output returns the traversal path taken by BFS
      * @return std::vector<int> returns the vector that holds the path taken by the traversal
      */
+
+
+     void Explore(int v, int e);
+
+
+
     std::vector<int> & Output();
+
+    std::vector<int> & returnPred(int end, int start);
 
 
     private:
@@ -52,6 +60,10 @@ class BFS{
      * in the path the traversal is currently at
      */
     int traversalIndex;
+
+    std::vector<int> pred;
+
+    std::vector<int> path;
 
     /*
      * adjlist_ is a 2D vector of ints that holds the adjacency list of the graph that the
