@@ -1,5 +1,5 @@
 # Trust_Network_Project
-Contributers:
+Contributors:
 * Vishesh Prasad (vprasad3)
 * Arnav Mehta(arnavm7)
 * Anirudh Laxminarasimha Bachiraju (alb11)
