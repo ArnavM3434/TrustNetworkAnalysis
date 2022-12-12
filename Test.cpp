@@ -122,8 +122,8 @@ bool testHelper(const std::string & filename) {
     }
 
 	//Test PageRank Algorithm
-    /*
-	PageRank currPageRank(dataAdjList);
+    
+	PageRank currPageRank(dataAdjList, 0.85);
 	 currPageRank.runPageRank(1, true);
 	 std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
 	 std::cout<<"\n";
@@ -132,9 +132,7 @@ bool testHelper(const std::string & filename) {
 	 	std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
 	 }
 
-    */
-    std::cout<<"Test One Passed"<<std::endl;
-
+    
     
 
 
@@ -142,12 +140,17 @@ bool testHelper(const std::string & filename) {
     BFS shortestTraversal(dataAdjList);
     shortestTraversal.Explore(0,3);
     std::vector<int>& shortestOutput = shortestTraversal.returnPred(3, 0);
+    if(shortestOutput[0] != 1 || shortestOutput[1] != 0){
+        std::cout<<"Shortest Path Failed!"<<std::endl;
+        
+    }
+    else{
+        std::cout<<"Shortest Path Passed!"<<std::endl;
 
-    std::cout<<"Shortest Path Output:"<<std::endl;
-    for(unsigned i = 0; i < shortestOutput.size(); i++){
-        std::cout<<shortestOutput[i]<<std::endl;
 
     }
+    
+    
 
 
 
@@ -155,20 +158,21 @@ bool testHelper(const std::string & filename) {
     BetweennessCentrality betweenness(dataAdjList);
     int mostImportant = betweenness.mostImportant;
 
-    std::cout<<"Most Important Node: "<<mostImportant<<std::endl;
 
-    std::cout<<"Scores Size: "<<betweenness.scores.size()<<std::endl;
+    if(mostImportant != 1){
+        std::cout<<"Betweenness Centrality Failed!"<<std::endl;
+        
+    }
+    else{
+        std::cout<<"Betweenness Centrality Passed!"<<std::endl;
 
-
-
-
-    for(unsigned i = 0; i < betweenness.scores.size(); i++){
-        std::cout << i << ": " << betweenness.scores[i]<<std::endl;
 
     }
 
 
     
+
+    std::cout<<"All Test Passed!"<<std::endl;
 
     return true;
 

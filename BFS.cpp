@@ -57,18 +57,7 @@ void BFS::Explore(int v){
         q.pop();
         traversalOutput[traversalIndex] = v;
         traversalIndex++;
-        // std::vector<int> tempNeigh(adjlist_[v]);
-        // int numNeigh = tempNeigh.size();        
-        // while(numNeigh > 0) {
-        //     auto nextNode = *std::min_element(tempNeigh.begin(), tempNeigh.end());
-        //     if(visitedNodes[nextNode] == true) {
-        //         continue;
-        //     } else {
-        //         visitedNodes[nextNode] = true;
-        //         q.push(nextNode);
-        //     }
-        //     numNeigh--;
-        // }
+        
         for (int neighbor : adjlist_[v]){
             if(visitedNodes[neighbor] == true){
                 continue;
@@ -82,6 +71,12 @@ void BFS::Explore(int v){
     }
 }
 
+/*
+ * Explore is a helper function for Traverse that is used to explore the path between a start node and end ndoe
+ * @param v is the starting vertex of the graph to explore by looking at its neighbors
+ * @param e is the ending vertex of the graph to explore
+ * @return void
+ */
 void BFS::Explore(int v, int e){
     std::queue<int> q;
     visitedNodes[v] = true;
@@ -92,18 +87,7 @@ void BFS::Explore(int v, int e){
         q.pop();
         traversalOutput[traversalIndex] = v;
         traversalIndex++;
-        // std::vector<int> tempNeigh(adjlist_[v]);
-        // int numNeigh = tempNeigh.size();
-        // while(numNeigh > 0) {
-        //     auto nextNode = *std::min_element(tempNeigh.begin(), tempNeigh.end());
-        //     if(visitedNodes[nextNode] == true) {
-        //         continue;
-        //     } else {
-        //         visitedNodes[nextNode] = true;
-        //         q.push(nextNode);
-        //     }
-        //     numNeigh--;
-        // }
+       
         for (int neighbor : adjlist_[v]){
             pred[neighbor] = v;
             if(visitedNodes[neighbor] == true){
@@ -141,14 +125,15 @@ std::vector<int> & BFS::Output(){
     return traversalOutput;
 }
 
+/*
+ * Output returns the shortest path between two nodes
+ * @return std::vector<int> returns the vector that holds the path taken by the traversal
+ * @param v is the starting vertex
+ * @param e is the ending vertex
+ */
 std::vector<int> & BFS::returnPred(int end, int start){
 
-    /*
-    std::cout<<"Start Node: " <<start<<"End Node: "<<end<<std::endl;
-    for(unsigned i = 0; i < traversalOutput.size(); i++){
-        std::cout<<traversalOutput[i]<<std::endl;
-    }
-    */
+    
 
     unsigned count = 0;
 

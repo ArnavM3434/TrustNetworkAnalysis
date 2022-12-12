@@ -45,6 +45,13 @@ class BFS{
 
     std::vector<int> & Output();
 
+
+    /*
+    * Return vector consisting of nodes in the shortest path between start and end
+    * @return std::vector<int> &
+    * @param int start
+    * @param int end
+    */
     std::vector<int> & returnPred(int end, int start);
 
 
@@ -66,8 +73,14 @@ class BFS{
      */
     int traversalIndex;
 
+    /*
+    * Vector representing each node's predeccessor in a BFS traversal from a start node to an end node
+    */
     std::vector<int> pred;
 
+    /*
+    * variable representing shortest path between start and ending nodes
+    */
     std::vector<int> path;
 
     /*

@@ -42,9 +42,9 @@ BetweennessCentrality::BetweennessCentrality(AdjList graph) {
     
    int max = scores[0];
    //This loop is used to find the node with the highest score
-   for (unsigned rizzlybear = 0; rizzlybear < scores.size(); rizzlybear++) {
-       if (scores[rizzlybear] > max) {
-           mostImportant = rizzlybear;
+   for (unsigned i = 0; i < scores.size(); i++) {
+       if (scores[i] > max) {
+           mostImportant = i;
        } 
    }
   

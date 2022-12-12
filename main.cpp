@@ -20,8 +20,9 @@ using namespace std;
  */
 int main()
 {
-    int setMaxNodes = 200;
+    int setMaxNodes = 10;
 
+    std::cout<<"Running Tests on Bigger Dataset!"<<std::endl;
     //Data Parsing
     V2D cleanedNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
 	std::cout<<"\n";
@@ -45,7 +46,7 @@ int main()
     }
     
 	//Run Page Rank
-    /*
+    
 	double dampingFactor = 0.85;
 	PageRank currPageRank(dataAdjList, dampingFactor);
 	currPageRank.runPageRank(10, true);
@@ -55,13 +56,15 @@ int main()
 	for(auto iter : dataPageRank) {
 		std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
 	}
-    */
+    
 
     
     //run Betweenness Centrality
     BetweennessCentrality betweenness(dataAdjList);
     int mostImportant = betweenness.mostImportant;
 
+    std::cout<<std::endl;
+    std::cout<<"Betweenness Centrality Test: "<<std::endl;
     std::cout<<"Most Important Node: "<<mostImportant<<std::endl;
     
 
@@ -69,7 +72,7 @@ int main()
     
     //Test Cases
 	std::cout<<"\n";
-    std::cout<<"Now Running Tests!"<<std::endl;
+    std::cout<<"Now Running Smaller Tests on Smaller Graph!"<<std::endl;
     test(1);
 
 
