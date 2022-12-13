@@ -41,7 +41,7 @@ Read in the data from the soc-Epinions1.txt text file located in the Dataset fol
 Stores helper functions for data parsing.
 # Adjacency List
 ## Files: AdjList.h/cpp
-Uses the nodes that are read in from the data parsing pipeline to create an adjacency to list and an adjecnecy from list.
+Uses the nodes that are read in from the data parsing pipeline to create an adjacency "to" list (each node has vector of nodes it points to) and an adjecnecy "from" list (each node has vector of nodes that point to it).
 
 # Breadth First Search(BFS)
 ## Files: BFS.h/cpp
