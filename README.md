@@ -54,3 +54,9 @@ Uses graph from adjacency list to calculate the rank of each node and find the n
 # Betweenness Centrality
 ## Files: BetweennessCentrality.h/cpp
 Uses graph from adjacency list to find the most important node using betweenness centrality.
+
+# Testing
+## Folder: Tests
+Holds the custom data set in a .txt file that uses the same formatting as the large data set
+## Files: Test.h/cpp
+Run unit tests on each algorithm using the custom data set read in from .txt files in the Tests folder.
