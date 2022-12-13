@@ -41,23 +41,24 @@ Holds the data set .txt file where the data set is located.
 Read in the data from the soc-Epinions1.txt text file located in the Dataset folder. Data stores in the given format: NodeTo"\t"NodeFrom. Store the data set in a 2 dimensional vector of integers so that it can be used to create the adjacency list.
 ## Helper Files: utils.h/cpp
 Stores helper functions for data parsing.
+- - - -
 # Adjacency List
 ## Files: AdjList.h/cpp
 Uses the nodes that are read in from the data parsing pipeline to create an adjacency "to" list (each node has vector of nodes it points to) and an adjacency "from" list (each node has vector of nodes that point to it).
-
+- - - -
 # Breadth First Search(BFS)
 ## Files: BFS.h/cpp
 Uses graph adjacency list to find a breadth first search traversal through the given graph.
 Also had function to find the shortest path between two nodes that was used by Betweenness Centrality Algorithm.
-
+- - - -
 # PageRank
 ## Files: PageRank.h/cpp
 Uses graph from adjacency list to calculate the rank of each node and find the node with the highest rank.
-
+- - - -
 # Betweenness Centrality
 ## Files: BetweennessCentrality.h/cpp
 Uses graph from adjacency list to find the most important node using betweenness centrality.
-
+- - - -
 # Testing
 ## Folder: Tests
 Holds the custom data set in a .txt file that uses the same formatting as the large data set
