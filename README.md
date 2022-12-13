@@ -6,7 +6,7 @@ Contributors:
 * Rohit Uruma (ruruma2)
 
 # Overview
-Goal: Analyize a trust network and run BFS, Betweenes Centrality, and Page Rank on a directed, unweighted graph.
+Goal: Analyize a trust network and run BFS, Betweenness Centrality, and Page Rank on a directed, unweighted graph.
 - - - -
 # Instructions to Run Program
 Step 1: To download our program, please copy and paste this line to your terminal:
