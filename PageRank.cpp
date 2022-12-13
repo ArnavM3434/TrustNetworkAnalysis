@@ -111,6 +111,7 @@ std::vector<std::vector<double>> PageRank::getMarkovMatrix() {
 	return markovMatrix_;
 }
 
+
 /**
  * getRank returns the current page rank of the graph that has already been calculated
  * @return a one dimensional vector of doubles

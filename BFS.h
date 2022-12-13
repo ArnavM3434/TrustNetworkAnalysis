@@ -28,8 +28,6 @@ class BFS{
      */
     void Explore(int v);
 
-    
-
     /**
     * Traversal path from specified starting node to ending node taken by BFS
     * @param v is starting node
@@ -44,7 +42,6 @@ class BFS{
      */
 
     std::vector<int> & Output();
-
 
     /**
     * Return vector consisting of nodes in the shortest path between start and end

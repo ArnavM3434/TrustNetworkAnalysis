@@ -21,6 +21,7 @@ std::string file_to_string(const std::string& filename){
   return strStream.str();
 }
 
+
 /**
 * Functions for the removal of whitespace to the left or right of a string (or both)
 *
@@ -31,6 +32,8 @@ std::string TrimRight(const std::string & str) {
     std::string tmp = str;
     return tmp.erase(tmp.find_last_not_of(" ") + 1);
 }
+
+
 /**
 * Functions for the removal of whitespace to the left or right of a string (or both)
 *
@@ -41,6 +44,8 @@ std::string TrimLeft(const std::string & str) {
     std::string tmp = str;
     return tmp.erase(0, tmp.find_first_not_of(" "));
 }
+
+
 /**
 * Functions for the removal of whitespace to the left or right of a string (or both)
 *
@@ -51,6 +56,7 @@ std::string Trim(const std::string & str) {
     std::string tmp = str;
     return TrimLeft(TrimRight(str));
 }
+
 
 /**
  * Given a string and character, split the string by the character and store in a vector

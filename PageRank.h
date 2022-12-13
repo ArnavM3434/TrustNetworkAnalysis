@@ -48,6 +48,7 @@ class PageRank {
 		 */
 		std::vector<double> getRank();
 
+
 	private:
 		/**
 		 * powerIteration is a helper function that is used to computer one power iteration 

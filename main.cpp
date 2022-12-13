@@ -3,10 +3,9 @@
  * Program that runs algorithms on a Trust Network
  */
 
-
 #include <vector>
 #include <iostream>
-
+#include <fstream>
 
 #include "DataParsing.h"
 #include "AdjList.h"
@@ -14,15 +13,19 @@
 #include "Test.h"
 #include "PageRank.h"
 
-using namespace std;
 /**
  * Main routine for the Trust Network Project
  */
 int main()
 {
-    std::cout<<"------------------------------"<<std::endl;
-	//set any number between 1-10 to get output that is easily readable
-	int setMaxNodes = 200;
+	std::ofstream ofs;
+	ofs.open("output.txt", std::ofstream::out | std::ofstream::trunc);
+
+    ofs<<"------------------------------";
+	ofs<<"\n";
+
+	//Set a low number that kees runtime low and is easily readable
+	int setMaxNodes = 25;
 
 	//Factors that can be changes as desired
 	int bfsStartNode = 0;
@@ -30,45 +33,52 @@ int main()
 	int numPowerIter = 100;
 	bool restartRank = true;
 
+	std::cout<<"----------"<<std::endl;
     std::cout<<"Running Algorithms on Bigger Dataset!"<<std::endl;
 
     //Data Parsing
-    V2D cleanedNodes = getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
-	std::cout<<"\n";
-    std::cout<< std::to_string(setMaxNodes) + " lines of cleaned data set:"<<std::endl;
-    for(int i = 0; i < setMaxNodes; i++){
-         std::cout<<std::to_string(cleanedNodes[i][0]) + " " + std::to_string(cleanedNodes[i][1])<<std::endl;
-    }
-
+	DataParsing parseData(0);
+    V2D cleanedNodes = parseData.getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
+	int numLinClean = parseData.getNumLinesCleaned();
+	int numEdgeClean = parseData.getNumEdgesCleaned();
+	int numNodeClean = parseData.getNumNodesCleaned();
+	ofs<<"Cleaned "<<numLinClean<<" lines from the data set";
+	ofs<<"\n";
+	ofs<<"Number of Nodes: "<<numNodeClean<<"\t"<<"Number of Edges: "<<numEdgeClean;
+	ofs<<"\n";
+	
     //Get Adjacency List
     AdjList dataAdjList(cleanedNodes, setMaxNodes);
 
     //Run BFS
     BFS bfsTraversal(dataAdjList);
     bfsTraversal.Traverse(bfsStartNode);
-    std:vector<int>& bfsTraversalOutput = bfsTraversal.Output();
-	std::cout<<"\n";
-    std::cout<<"BFS Traversal Starting at Node " + std::to_string(bfsStartNode) + ":"<<std::endl;
-	std::cout<<bfsTraversalOutput[0];
+    std::vector<int>& bfsTraversalOutput = bfsTraversal.Output();
+	ofs<<"\n";
+    ofs<<"BFS Traversal Starting at Node "<<bfsStartNode<<":";
+	ofs<<"\n";
+	ofs<<bfsTraversalOutput[0];
 	int newLineCount = 1;
     for(int i = 1; i < setMaxNodes; i++){
-		std::cout<<" --> ";
+		ofs<<" --> ";
 		if(newLineCount % 10 == 0) {
-			std::cout<<"\n";
+			ofs<<"\n";
 		}
-        std::cout<<bfsTraversalOutput[i];
+        ofs<<bfsTraversalOutput[i];
 		newLineCount++;
     }
-	std::cout<<"\n";
+	ofs<<"\n";
     
 	//Run Page Rank
 	PageRank currPageRank(dataAdjList, dampingFactor);
 	currPageRank.runPageRank(numPowerIter, restartRank);
 	std::vector<std::vector<std::string>> dataPageRank = currPageRank.getPageRank();
-	std::cout<<"\n";
-	std::cout<<"Page Rank Results:"<<std::endl;
+	ofs<<"\n";
+	ofs<<"Page Rank Results:";
+	ofs<<"\n";
 	for(auto iter : dataPageRank) {
-		std::cout<<"Node: " + iter[0] + ", Rank: " + iter[1]<<std::endl;
+		ofs<<"Node: "<<iter[0]<<",\tRank: "<<iter[1];
+		ofs<<"\n";
 	}
 	std::vector<double> calcRank = currPageRank.getRank();
 	double maxRank = calcRank[0];
@@ -79,22 +89,30 @@ int main()
 			currMax = i;
 		}
 	}
-	std::cout<<"Node with highest Rank: " + std::to_string(currMax);
+	ofs<<"Node with highest Rank: "<<currMax;
+	ofs<<"\n";
     
-    //run Betweenness Centrality
+    //Run Betweenness Centrality
     BetweennessCentrality betweenness(dataAdjList);
     unsigned int mostImportant = betweenness.mostImportant;
-    std::cout<<std::endl;
-	std::cout<<"\n";
-    std::cout<<"Betweenness Centrality Test: "<<std::endl;
-    std::cout<<"Most Important Node: "<<mostImportant<<std::endl;
+	ofs<<"\n";
+    ofs<<"Betweenness Centrality Test: ";
+	ofs<<"\n";
+    ofs<<"Most Important Node: "<<mostImportant;
+	ofs<<"\n";
     
-    
+	std::cout<<"Output of algorithms are in output.txt"<<std::endl;
+	std::cout<<"----------"<<std::endl;
+
     //Test Cases
-	std::cout<<"\n";
     std::cout<<"Now Running Smaller Tests on Smaller Graph!"<<std::endl;
     test(1);
 
-	std::cout<<"------------------------------"<<std::endl;
+	ofs<<"------------------------------";
+
+	std::cout<<"----------"<<std::endl;
+
+	ofs.close();
+
     return 0;
 }

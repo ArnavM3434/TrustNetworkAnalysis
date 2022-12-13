@@ -9,7 +9,7 @@
 
 using std::queue;
 
-/*
+/**
  * This constructor handles the Betweenness Centrality Algorithm. It relies
  * on a BFS traversal to find the shortest path. It updates the class level
  * variable "MostImportant" with the node that has the most paths running through
@@ -46,5 +46,4 @@ BetweennessCentrality::BetweennessCentrality(AdjList graph) {
            mostImportant = i;
        } 
    }
-  
 }

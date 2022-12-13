@@ -23,7 +23,8 @@ bool test(int testNumber) {
  */
 bool testHelper(const std::string & filename) {
     int setMaxNodes = 5;
-    V2D cleanedNodes = getNodes(filename, setMaxNodes);
+	DataParsing parseData(0);
+    V2D cleanedNodes = parseData.getNodes(filename, setMaxNodes);
    
     AdjList dataAdjList(cleanedNodes, setMaxNodes);
 

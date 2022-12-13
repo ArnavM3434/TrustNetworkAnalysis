@@ -21,6 +21,7 @@ AdjList::AdjList(const V2D & dataset, int maxNode) {
     maxNode_ = maxNode;
 }
 
+
 /**
  * printFrom prints the from adjacency list
  * @return void
@@ -34,6 +35,7 @@ void AdjList::printFrom() {
         std::cout << "" << std::endl;
     }
 }
+
 
 /**
  * printFrom prints the to adjacency list
@@ -58,6 +60,7 @@ int AdjList::getMaxNode(){
     return maxNode_;
 }
 
+
 /**
  * getAdjListFrom returns the from adjacency list
  * @return V2D a 2D vector of ints
@@ -65,6 +68,7 @@ int AdjList::getMaxNode(){
 V2D & AdjList::getAdjListFrom(){
     return adjlistFrom_;
 }
+
 
 /**
  * getAdjListFrom returns the to adjacency list

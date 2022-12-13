@@ -21,6 +21,7 @@ BFS::BFS(AdjList graph){
     adjlist_ = graph.getAdjListTo();
 }
 
+
 /**
  * Traverse is the function which runs BFS on the given BFS object
  * @param startNode is the starting node for BFS traversal
@@ -40,6 +41,7 @@ void BFS::Traverse(int startNode){
         }
     }
 }
+
 
 /**
  * Explore is a helper function for Traverse that is used to explore the neighbors of
@@ -65,11 +67,11 @@ void BFS::Explore(int v){
             else{
                 visitedNodes[neighbor] = true;
                 q.push(neighbor);
-
             }
         }
     }
 }
+
 
 /**
  * Explore is a helper function for Traverse that is used to explore the path between a start node and end ndoe
@@ -95,19 +97,11 @@ void BFS::Explore(int v, int e){
             }
             else{
                 visitedNodes[neighbor] = true;
-
-
-
                 if(neighbor == e){
                     //end traversal
                     return;
-
-
                 }
                 q.push(neighbor);
-
-
-
             }
         }
     }
@@ -121,6 +115,7 @@ void BFS::Explore(int v, int e){
 std::vector<int> & BFS::Output(){
     return traversalOutput;
 }
+
 
 /**
  * Output returns the shortest path between two nodes

@@ -16,6 +16,7 @@
  */
 std::string file_to_string(const std::string & filename);
 
+
 /**
 * Functions for the removal of whitespace to the left or right of a string (or both)
 *
@@ -25,6 +26,7 @@ std::string file_to_string(const std::string & filename);
 std::string TrimRight(const std::string & str);
 std::string TrimLeft(const std::string & str);
 std::string Trim(const std::string & str);
+
 
 /**
  * Given a string and character, split the string by the character and store in a vector
