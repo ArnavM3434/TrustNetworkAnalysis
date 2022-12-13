@@ -4,7 +4,7 @@
 Contributors:
 * Vishesh Prasad (vprasad3)
 * Arnav Mehta (arnavm7)
-* Anirudh Laxminarasimha Bachiraju (alb11)
+* Anirudh Bachiraju (alb11)
 * Rohit Uruma (ruruma2)
 
 # Overview
