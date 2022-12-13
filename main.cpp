@@ -21,7 +21,7 @@ int main()
 	std::ofstream ofs;
 	ofs.open("output.txt", std::ofstream::out | std::ofstream::trunc);
 
-    ofs<<"------------------------------";
+	ofs<<"------------------------------";
 	ofs<<"\n";
 
 	//Set a low number that kees runtime low and is easily readable
@@ -34,11 +34,11 @@ int main()
 	bool restartRank = true;
 
 	std::cout<<"----------"<<std::endl;
-    std::cout<<"Running Algorithms on Bigger Dataset!"<<std::endl;
+	std::cout<<"Running Algorithms on Bigger Dataset!"<<std::endl;
 
-    //Data Parsing
+	//Data Parsing
 	DataParsing parseData(0);
-    V2D cleanedNodes = parseData.getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
+	V2D cleanedNodes = parseData.getNodes("Dataset/soc-Epinions1.txt", setMaxNodes);
 	int numLinClean = parseData.getNumLinesCleaned();
 	int numEdgeClean = parseData.getNumEdgesCleaned();
 	int numNodeClean = parseData.getNumNodesCleaned();
@@ -46,29 +46,29 @@ int main()
 	ofs<<"\n";
 	ofs<<"Number of Nodes: "<<numNodeClean<<"\t"<<"Number of Edges: "<<numEdgeClean;
 	ofs<<"\n";
-	
-    //Get Adjacency List
-    AdjList dataAdjList(cleanedNodes, setMaxNodes);
 
-    //Run BFS
-    BFS bfsTraversal(dataAdjList);
-    bfsTraversal.Traverse(bfsStartNode);
-    std::vector<int>& bfsTraversalOutput = bfsTraversal.Output();
+	//Get Adjacency List
+	AdjList dataAdjList(cleanedNodes, setMaxNodes);
+
+	//Run BFS
+	BFS bfsTraversal(dataAdjList);
+	bfsTraversal.Traverse(bfsStartNode);
+	std::vector<int>& bfsTraversalOutput = bfsTraversal.Output();
 	ofs<<"\n";
-    ofs<<"BFS Traversal Starting at Node "<<bfsStartNode<<":";
+	ofs<<"BFS Traversal Starting at Node "<<bfsStartNode<<":";
 	ofs<<"\n";
 	ofs<<bfsTraversalOutput[0];
 	int newLineCount = 1;
-    for(int i = 1; i < setMaxNodes; i++){
+	for(int i = 1; i < setMaxNodes; i++){
 		ofs<<" --> ";
 		if(newLineCount % 10 == 0) {
 			ofs<<"\n";
 		}
-        ofs<<bfsTraversalOutput[i];
+		ofs<<bfsTraversalOutput[i];
 		newLineCount++;
-    }
+	}
 	ofs<<"\n";
-    
+
 	//Run Page Rank
 	PageRank currPageRank(dataAdjList, dampingFactor);
 	currPageRank.runPageRank(numPowerIter, restartRank);
@@ -91,22 +91,22 @@ int main()
 	}
 	ofs<<"Node with highest Rank: "<<currMax;
 	ofs<<"\n";
-    
-    //Run Betweenness Centrality
-    BetweennessCentrality betweenness(dataAdjList);
-    unsigned int mostImportant = betweenness.mostImportant;
+
+	//Run Betweenness Centrality
+	BetweennessCentrality betweenness(dataAdjList);
+	unsigned int mostImportant = betweenness.mostImportant;
 	ofs<<"\n";
-    ofs<<"Betweenness Centrality Test: ";
+	ofs<<"Betweenness Centrality Test: ";
 	ofs<<"\n";
-    ofs<<"Most Important Node: "<<mostImportant;
+	ofs<<"Most Important Node: "<<mostImportant;
 	ofs<<"\n";
-    
+
 	std::cout<<"Output of algorithms are in output.txt"<<std::endl;
 	std::cout<<"----------"<<std::endl;
 
-    //Test Cases
-    std::cout<<"Now Running Smaller Tests on Smaller Graph!"<<std::endl;
-    test(1);
+	//Test Cases
+	std::cout<<"Now Running Smaller Tests on Smaller Graph!"<<std::endl;
+	test(1);
 
 	ofs<<"------------------------------";
 
@@ -114,5 +114,5 @@ int main()
 
 	ofs.close();
 
-    return 0;
+	return 0;
 }

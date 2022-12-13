@@ -6,19 +6,19 @@
  * @param maxNode The number of nodes 
  */
 AdjList::AdjList(const V2D & dataset, int maxNode) {
-    V2D adjlistFrom;
-    V2D adjlistTo;
-    adjlistFrom.resize(maxNode);
-    adjlistTo.resize(maxNode);
-    for (std::vector<int> nodePair : dataset) {
-        int fromNode = nodePair[0];
-        int toNode = nodePair[1];
-        adjlistFrom[toNode].push_back(fromNode);
-        adjlistTo[fromNode].push_back(toNode);
-    }
-    adjlistFrom_ = adjlistFrom;
-    adjlistTo_ = adjlistTo;
-    maxNode_ = maxNode;
+	V2D adjlistFrom;
+	V2D adjlistTo;
+	adjlistFrom.resize(maxNode);
+	adjlistTo.resize(maxNode);
+	for (std::vector<int> nodePair : dataset) {
+		int fromNode = nodePair[0];
+		int toNode = nodePair[1];
+		adjlistFrom[toNode].push_back(fromNode);
+		adjlistTo[fromNode].push_back(toNode);
+	}
+	adjlistFrom_ = adjlistFrom;
+	adjlistTo_ = adjlistTo;
+	maxNode_ = maxNode;
 }
 
 
@@ -27,13 +27,13 @@ AdjList::AdjList(const V2D & dataset, int maxNode) {
  * @return void
  */
 void AdjList::printFrom() {
-    for (int i = 0; i < maxNode_; i++) {
-        std::cout << i << " <- ";
-        for (int node : adjlistFrom_[i]) {
-            std::cout << node << " ";
-        }
-        std::cout << "" << std::endl;
-    }
+	for (int i = 0; i < maxNode_; i++) {
+		std::cout << i << " <- ";
+		for (int node : adjlistFrom_[i]) {
+			std::cout << node << " ";
+		}
+		std::cout << "" << std::endl;
+	}
 }
 
 
@@ -42,13 +42,13 @@ void AdjList::printFrom() {
  * @return void
  */
 void AdjList::printTo() {
-    for (int i = 0; i < maxNode_; i++) {
-        std::cout << i << " <- ";
-        for (int node : adjlistTo_[i]) {
-            std::cout << node << " ";
-        }
-        std::cout << "" << std::endl;
-    }
+	for (int i = 0; i < maxNode_; i++) {
+		std::cout << i << " <- ";
+		for (int node : adjlistTo_[i]) {
+			std::cout << node << " ";
+		}
+		std::cout << "" << std::endl;
+	}
 }
 
 
@@ -57,7 +57,7 @@ void AdjList::printTo() {
  * @return int maxNode_ in the adjacency list
  */
 int AdjList::getMaxNode(){
-    return maxNode_;
+	return maxNode_;
 }
 
 
@@ -66,7 +66,7 @@ int AdjList::getMaxNode(){
  * @return V2D a 2D vector of ints
  */
 V2D & AdjList::getAdjListFrom(){
-    return adjlistFrom_;
+	return adjlistFrom_;
 }
 
 
@@ -75,5 +75,5 @@ V2D & AdjList::getAdjListFrom(){
  * @return V2D a 2D vector of ints
  */
 V2D & AdjList::getAdjListTo(){
-    return adjlistTo_;
+	return adjlistTo_;
 }
