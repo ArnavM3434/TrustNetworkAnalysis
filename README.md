@@ -32,7 +32,7 @@ Note: There is no input to be specified. However you can change the number of no
 # Final Deliverables
 ## Folder: Final_Deliverables
 Holds the final deliverables for the project including the final presentation video, slides, and the final report.
-results.md within Final_Deliverables stores the written report.
+results.md stores the written report.
 - - - -
 # Data Parsing
 ## Folder: Dataset
