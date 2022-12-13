@@ -24,9 +24,9 @@ Step 4: The executable file created can then be run with the following command:
 ```
 ./trustNet.exe 
 ```
-Step 5: The output will be displayed in the terminal. Where we show BFS, PageRank, and Betweenness Centrality and their respective outputs. We also show the results of the test cases, but not the test cases themselves. We do not write the output to a text file since the output would change with any of the changed parameters and it is easiest to view those changes in the terminal.
+Step 5: The output will be displayed in the terminal. Where we show BFS, PageRank, and Betweenness Centrality and their respective outputs. We also show the results of the test cases, but not the test cases themselves in the terminal. We do not write the output to a text file since the output would change with any of the changed parameters and it is easiest to view those changes in the terminal. 
 
-Note: There is no input to be specified. However you can change starting node for BFS and the damping factor/number of power iterations for PageRank in main.cpp. You can also change the file name in Test.cpp (within bool test(int testNumber)) to include a file of your own creation.
+Note: There is no input to be specified. However you can change the number of nodes you work with, the starting node for BFS, and the damping factor/number of power iterations for PageRank all in main.cpp (which deals with the larger dataset). You can also change the file name in Test.cpp (within bool test(int testNumber)) to include a file of your own creation - test cases would have to be modified accordingly.
 - - - -
 # Final Deliverables
 ## Folder: Final_Deliverables
@@ -41,11 +41,12 @@ Read in the data from the soc-Epinions1.txt text file located in the Dataset fol
 Stores helper functions for data parsing.
 # Adjacency List
 ## Files: AdjList.h/cpp
-Uses the nodes that are read in from the data parsing pipeline to create an adjacency "to" list (each node has vector of nodes it points to) and an adjecnecy "from" list (each node has vector of nodes that point to it).
+Uses the nodes that are read in from the data parsing pipeline to create an adjacency "to" list (each node has vector of nodes it points to) and an adjacency "from" list (each node has vector of nodes that point to it).
 
 # Breadth First Search(BFS)
 ## Files: BFS.h/cpp
-Uses grpah adjacency list to find a breadth first search traversal through the given graph.
+Uses graph adjacency list to find a breadth first search traversal through the given graph.
+Also had function to find the shortest path between two nodes that was used by Betweenness Centrality Algorithm.
 
 # PageRank
 ## Files: PageRank.h/cpp
@@ -60,3 +61,5 @@ Uses graph from adjacency list to find the most important node using betweenness
 Holds the custom data set in a .txt file that uses the same formatting as the large data set
 ## Files: Test.h/cpp
 Run unit tests on each algorithm using the custom data set read in from .txt files in the Tests folder.
+## Brief Description
+Our tests ensure we clean the test data correctly (it purposely has typos in it), create a graph correctly, implement BFS correctly using a sample starting node, implement Page Rank correctly, and implement Betweenness Centrality and the shortest path aspect of Betweenness Centrality.
