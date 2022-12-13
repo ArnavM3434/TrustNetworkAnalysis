@@ -24,7 +24,7 @@ Step 4: The executable file created can then be run with the following command:
 ```
 ./trustNet.exe 
 ```
-##Output:
+## Output:
 The output will be displayed in the text file: output.txt. The output will include the output of BFS, PageRank, and Betweenness Centrality run on the data set.
 
 Note: There is no input to be specified. However you can change the number of nodes you work with, the starting node for BFS, and the damping factor/number of power iterations for PageRank all in main.cpp (which deals with the larger dataset). You can also change the file name in Test.cpp (within bool test(int testNumber)) to include a file of your own creation - test cases would have to be modified accordingly.
