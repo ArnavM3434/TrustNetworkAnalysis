@@ -15,4 +15,4 @@ The first step in our project was to implement a data parsing pipeline to read t
 
 # Breadth First Search (BFS)
 The output of BFS is the path that the breadth first search takes when going through the trust network. The output for BFS of the trust network can be seen below. [INSERT PICTURE] To test the correctness of our algorithms, we developed a custom trust network and went through BFS by hand. The custom trust network was developed with only a small number of nodes so that our output could be tested quickly and easily before we scaled up to the actual, large data set. We then tested the algorithm’s output with the actual output that we had calculated. This test can be seen below.
-![alt text](https://imgur.com/a/T0OwYcJ)
+![alt text](/Final_Deliverables/Final_Report_Images/BFS_Traversal.png)
