@@ -21,12 +21,12 @@ class BetweennessCentrality{
     /*
     * Public variable for most important node
     */
-    int mostImportant;
+    unsigned int mostImportant;
 
     /*
     * Vector that holds how many paths pass through node i at index i
     */
-    std::vector<int> scores;
+    std::vector<unsigned int> scores;
 
 
     private:

@@ -22,7 +22,7 @@ int main()
 {
     std::cout<<"------------------------------"<<std::endl;
 	//set any number between 1-10 to get output that is easily readable
-	int setMaxNodes = 10;
+	int setMaxNodes = 200;
 
 	//Factors that can be changes as desired
 	int bfsStartNode = 0;
@@ -83,7 +83,7 @@ int main()
     
     //run Betweenness Centrality
     BetweennessCentrality betweenness(dataAdjList);
-    int mostImportant = betweenness.mostImportant;
+    unsigned int mostImportant = betweenness.mostImportant;
     std::cout<<std::endl;
 	std::cout<<"\n";
     std::cout<<"Betweenness Centrality Test: "<<std::endl;

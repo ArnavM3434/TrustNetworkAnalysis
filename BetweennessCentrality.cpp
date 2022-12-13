@@ -18,7 +18,7 @@ using std::queue;
  */
 BetweennessCentrality::BetweennessCentrality(AdjList graph) {
    V2D adjListTo = graph.getAdjListTo();
-   std::vector<int> scores_temp(adjListTo.size());
+   std::vector<unsigned int> scores_temp(adjListTo.size());
    scores = scores_temp;
   
    for(unsigned i = 0; i < adjListTo.size(); i++){ //This double for loop evaluates every pair of nodes
@@ -42,7 +42,7 @@ BetweennessCentrality::BetweennessCentrality(AdjList graph) {
    int max = scores[0];
    //This loop is used to find the node with the highest score
    for (unsigned i = 0; i < scores.size(); i++) {
-       if (scores[i] > max) {
+       if (scores[i] >= max) {
            mostImportant = i;
        } 
    }
