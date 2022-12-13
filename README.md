@@ -20,11 +20,11 @@ Step 3: Build the program by running the following command in your terminal:
 ```
 make
 ```
-Step4: The executable file created can then be run with the following command:
+Step 4: The executable file created can then be run with the following command:
 ```
 ./trustNet.exe 
 ```
-Step5: The output will be displayed in the terminal. Where we show BFS, PageRank, and Betweenness Centrality and their respective outputs. We also show the results of the test cases, but not the test cases themselves. We do not write the output to a text file since the output would change with any of the changed parameters and it is easiest to view those changes in the terminal.
+Step 5: The output will be displayed in the terminal. Where we show BFS, PageRank, and Betweenness Centrality and their respective outputs. We also show the results of the test cases, but not the test cases themselves. We do not write the output to a text file since the output would change with any of the changed parameters and it is easiest to view those changes in the terminal.
 
 Note: There is no input to be specified. However you can change starting node for BFS and the damping factor/number of power iterations for PageRank in main.cpp.
 - - - -
