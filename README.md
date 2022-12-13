@@ -12,7 +12,7 @@ Goal: Analyize a trust network and run BFS, Betweenness Centrality, and Page Ran
 Step 1: To download our program, please copy and paste this line to your terminal:
 
 ```
-git clone git@github.com:VisheshP-29/Trust_Network_Project.git
+git clone https://github.com/VisheshP-29/Trust_Network_Project.git
 ``` 
 Step 2: Open the repository in your terminal and navigate to the Trust_Network_Project directory.
 
