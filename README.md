@@ -16,11 +16,11 @@ git clone https://github.com/VisheshP-29/Trust_Network_Project.git
 ``` 
 Step 2: Open the repository in your terminal and navigate to the Trust_Network_Project directory.
 
-Step 3: Build the program by running the following command in your terminal:
+Step 3: Build the program by running the following command in the Trust_Network_Project terminal:
 ```
 make
 ```
-Step 4: The executable file created can then be run with the following command:
+Step 4: The executable file created can then be run with the following command in the Trust_Network_Project terminal:
 ```
 ./trustNet.exe 
 ```
